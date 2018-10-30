@@ -1,0 +1,19 @@
+{
+  "name": "conn/iagentesms",
+  "description": "Envio de SMS pela plataforma iagentesms",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Edinei J. Bauer",
+      "email": "edineibauer@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "IagenteSms": "src/"
+    }
+  }
+}
