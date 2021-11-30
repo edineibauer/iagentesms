@@ -2,6 +2,8 @@
 
 namespace IagenteSms;
 
+use Conn\Update;
+
 class SmsIagente
 {
     private $celular;
@@ -116,8 +118,12 @@ class SmsIagente
                 "codigosms" => $this->id
             ]);
 
-            if ($response !== "OK")
+            if ($response !== "OK") {
                 $this->error = $response;
+            } else {
+                $up = new Update();
+                $up->exeUpdate("smsiagente", ["status" => "Enviado"], "WHERE id = :dd", "dd={$this->id}");
+            }
 
         } catch (\Exception $e) {
             $this->error = $e->getMessage();
