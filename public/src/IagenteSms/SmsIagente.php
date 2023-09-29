@@ -108,7 +108,7 @@ class SmsIagente
     private function singleSend()
     {
         try {
-            $response = \Helpers\Helper::postRequest("http://www.iagentesms.com.br/webservices/http.php", [
+            $response = \Helpers\Helper::postRequest("https://api.iagentesms.com.br/webservices/http.php", [
                 "metodo" => "envio",
                 "usuario" => SMSIAGENTEUSER,
                 "senha" => SMSIAGENTESENHA,
@@ -136,7 +136,7 @@ class SmsIagente
     private function multSend()
     {
         try {
-            $response = \Helpers\Helper::postRequest("http://www.iagentesms.com.br/webservices/http.php", [
+            $response = \Helpers\Helper::postRequest("https://api.iagentesms.com.br/webservices/http.php", [
                 "metodo" => "envio",
                 "usuario" => SMSIAGENTEUSER,
                 "senha" => SMSIAGENTESENHA,
@@ -160,7 +160,7 @@ class SmsIagente
     public function getStatus()
     {
         if (empty($this->error) && $this->id) {
-            $result = \Helpers\Helper::postRequest("http://www.iagentesms.com.br/webservices/http.php", [
+            $result = \Helpers\Helper::postRequest("https://api.iagentesms.com.br/webservices/http.php", [
                 "metodo" => "consulta",
                 "usuario" => SMSIAGENTEUSER,
                 "senha" => SMSIAGENTESENHA,
